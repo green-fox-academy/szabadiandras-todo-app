@@ -6,7 +6,7 @@ const args: string[] = process.argv;
 declare function require(path: string): any;
 export { };
 
-// This program is responsible to read the file with the to-do's and show them in the consol
+// This program is responsible to read the file and return a message if the file is empty
 
 export function toDo() {
   try {
@@ -21,4 +21,4 @@ export function toDo() {
   catch (error) {
     console.log('Unable to read file.');
   }
-};
+}
