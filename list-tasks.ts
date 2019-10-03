@@ -10,12 +10,17 @@ export { };
 
 export function toDo() {
   try {
+
     let content = fs.readFileSync('todo.txt', 'utf8');
     content = content.split("\n")
 
-    for (let i: number = 0; i <= content.length - 1; i++) {
-      i.toString();
-      console.log(i + 1 + " - " + content[i]);
+    if (content.length == 1) {
+      console.log("No to-do's for today! :)");
+    } else {
+      for (let i: number = 0; i <= content.length - 1; i++) {
+        i.toString();
+        console.log(i + 1 + " - " + content[i]);
+      }
     }
   }
   catch (error) {

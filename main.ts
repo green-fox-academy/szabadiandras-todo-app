@@ -5,15 +5,18 @@ const args: string[] = process.argv; //for using command line arguments. Don't f
 
 import { noUserInput } from "./print-usage";
 import { toDo } from "./list-tasks";
+import { addTask } from "./add-task";
 
 let mainProcess = () => {
 
   if (args.length == 2) {
-    console.log(noUserInput());
+    noUserInput();
   } else if (args[2] == '-l') {
-    console.log(toDo());
+    toDo();
+  } else if (args[2] == '-a') {
+    addTask(args[3]);
   } else {
-    console.log('this is the error handling');
+    console.log('Task succesfully failed!');
   }
 }
 mainProcess();
